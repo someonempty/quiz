@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body, main {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: linear-gradient(160deg, #F33C3C 0%, #7E1F69 100%);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// ---------------------------------------Topics---------------------------------------
+
+.topics {
+  height: 600px;
+  margin-top: 87px;
+  gap: 10px 30px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.topic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 260px;
+  background: rgba(194, 117, 117, 0.4);
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.topic-active {
+  border: 14px solid #000000;
+}
+
+.topic-title {
+  font-size: 35px;
+  color: #ffffff;
+}
+
+// ---------------------------------------Settings---------------------------------------
+
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 70px;
+  height: 127px;
+  width: 1200px;
+  background-color: #331D1D;
+  border-radius: 34px;
+  padding: 0px 40px;
+}
+
+.difficulty, .count {
+  font-size: 30px;
+  color: #ffffff;
+  margin-right: 15px;
+}
+
+.difficulty-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 160px;
+  background-color: #5B4040;
+  border-radius: 18px;
+  border: none;
+  font-size: 30px;
+  color: #CACACA;
+  cursor: pointer;
+}
+
+.easy, .medium, .hard {
+  display: none;
+}
+
+.easy:checked + .difficulty-button {
+  border: 2px solid #DB6767;
+}
+
+.medium:checked + .difficulty-button {
+  border: 2px solid #DB6767;
+}
+
+.hard:checked + .difficulty-button {
+  border: 2px solid #DB6767;
+}
+
+
+.count-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 92px;
+  background-color: #5B4040;
+  border-radius: 18px;
+  border: none;
+  font-size: 30px;
+  color: #CACACA;
+  cursor: pointer;
+}
+
+.fifteen, .thirty, .fifty {
+  display: none;
+}
+
+.fifteen:checked + .count-button {
+  border: 2px solid #DB6767;
+}
+
+.thirty:checked + .count-button {
+  border: 2px solid #DB6767;
+}
+
+.fifty:checked + .count-button {
+  border: 2px solid #DB6767;
+}
+
+.start-button {
+  height: 100px;
+  width: 370px;
+  background-color: #262626;
+  border-radius: 23px;
+  margin-top: 74px;
+  font-size: 61px;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    border: 2px solid #CC5252;
+  }
+}
+
+// ---------------------------------------Game page---------------------------------------
+
+.game-page {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-block {
+  margin-top: 85px;
+  height: 350px;
+  width: 1400px;
+  background: rgba(91, 64, 64, 0.74);
+  border-radius: 32px;
+}
+
+.lifes-block {
+  margin-top: 27px;
+  height: 93px;
+  width: 750px;
+  background-color: rgba(91, 64, 64, 0.78);
+  border-radius: 32px;
+}
+
+.answers-block {
+  margin-top: 27px;
+  height: 350px;
+  width: 1400px;
+  background: rgba(91, 64, 64, 0.74);
+  border-radius: 32px;
+}
