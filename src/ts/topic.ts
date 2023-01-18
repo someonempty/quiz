@@ -1,6 +1,8 @@
 const topics:HTMLElement = document.querySelector('.topics')!;
+let selectedTopics:any = [];
 
 export const createTopic = (title:any) => {
+
     const topic = document.createElement('div');
     const topicTitle = document.createElement('span');
 
@@ -11,6 +13,11 @@ export const createTopic = (title:any) => {
 
     topic.addEventListener('click', () => {
         topic.classList.toggle('topic-active');
+        if (topic.classList.contains('topic-active')) {
+            selectedTopics.push(topic.innerText);
+            console.log(selectedTopics);
+        }
+            
     })
 
     topic.classList.add('topic');

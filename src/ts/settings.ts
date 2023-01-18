@@ -2,6 +2,10 @@
 const main: HTMLElement = document.querySelector('main')!;
 
 export const createSettingsBlock = () => {
+
+    let selectedDifficultyButton;
+    let selectedCountButton;
+
     const settings = document.createElement('div');
 
     const easy = document.createElement('input');
@@ -23,7 +27,6 @@ export const createSettingsBlock = () => {
     easy.type = 'radio';
     medium.type = 'radio';
     hard.type = 'radio';
-
     fifteen.type = 'radio';
     thirty.type = 'radio';
     fifty.type = 'radio';
@@ -34,6 +37,13 @@ export const createSettingsBlock = () => {
     fifteen.name = 'count';
     thirty.name = 'count';
     fifty.name = 'count';
+
+    easy.value = 'easy';
+    medium.value = 'medium';
+    hard.value = 'hard';
+    fifteen.value = 'fifteen';
+    thirty.value = 'thirty';
+    fifty.value = 'fifty';
 
     const easyLabel = document.createElement('label');
     const mediumLabel = document.createElement('label');
@@ -89,13 +99,51 @@ export const createSettingsBlock = () => {
     thirtyCustom.innerText = '30';
     fiftyCustom.innerText = '50';
 
-    // let radios = [];
+    const radios:any = document.querySelectorAll('input[name="difficulty"]');
+    const counts:any = document.querySelectorAll('input[name="count"]');
 
-    // if(easy.checked) {
-    //     radios.push(easy);
-    //     console.log(radios);
-    // }
-    // console.log(radios);
+    function checkDifficulty() {
+        for (const r of radios) {
+            if (r.checked) {
+              selectedDifficultyButton = r.value;
+              console.log(selectedDifficultyButton);
+            }
+          }
+    }
+
+    function checkCount() {
+        for (const c of counts) {
+            if (c.checked) {
+              selectedCountButton = c.value;
+              console.log(selectedCountButton);
+            }
+          }
+    }
+
+    easy.addEventListener('click', () => {
+        checkDifficulty();
+    });
+
+    medium.addEventListener('click', () => {
+        checkDifficulty();
+    });
+
+    hard.addEventListener('click', () => {
+        checkDifficulty();
+    });
+
+    fifteen.addEventListener('click', () => {
+        checkCount();
+    });
+
+    thirty.addEventListener('click', () => {
+        checkCount();
+    });
+
+    fifty.addEventListener('click', () => {
+        checkCount();
+    });
+
 
     return settings;
 }

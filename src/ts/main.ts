@@ -20,11 +20,13 @@ export const topicsArray = [
 ];
 
 
+
 const topicRender = () => {
     topicsArray.forEach(topic => {
         topics.appendChild(createTopic(topic.title))
     })
 }
+
 
 topicRender();
 createSettingsBlock();
