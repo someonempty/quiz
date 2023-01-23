@@ -9,24 +9,21 @@ import { createAnswersBlock } from './answers';
 const topics:HTMLElement = document.querySelector('.topics')!;
 
 export const topicsArray = [
-    {title: 'General'}, 
-    {title: 'Geography'}, 
-    {title: 'Sport'}, 
-    {title: 'History'}, 
-    {title: 'Arts'}, 
-    {title: 'Films'}, 
-    {title: 'Science'}, 
-    {title: 'Food'}
+    {title: 'General', data: 'General'}, 
+    {title: 'Geography', data: 'Geography'}, 
+    {title: 'Sport', data: 'Sport'},
+    {title: 'History', data: 'History'}, 
+    {title: 'Arts', data: 'Arts'},
+    {title: 'Films', data: 'Film'}, 
+    {title: 'Science', data: 'Science'}, 
+    {title: 'Food', data: 'Food'}
 ];
-
-
 
 const topicRender = () => {
     topicsArray.forEach(topic => {
-        topics.appendChild(createTopic(topic.title))
+        topics.appendChild(createTopic(topic.title, topic.data))
     })
 }
-
 
 topicRender();
 createSettingsBlock();

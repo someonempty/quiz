@@ -1,5 +1,9 @@
 const main:HTMLElement = document.querySelector('main')!;
 const gamePage:HTMLElement = document.querySelector('.game-page')!;
+import { fetching } from "./fetching";
+import { selectedTopics } from "./topic";
+import { selectedCountButton } from "./settings";
+import { selectedDifficultyButton } from "./settings";
  
  export const createStartButton = () => {
     const startButton = document.createElement('button');
@@ -11,6 +15,7 @@ const gamePage:HTMLElement = document.querySelector('.game-page')!;
     startButton.onclick = () => {
         main.style.display = 'none';
         gamePage.style.display = 'flex';
+        fetching(selectedTopics, +selectedCountButton, selectedDifficultyButton);
     }
 
     return startButton;
