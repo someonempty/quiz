@@ -2,9 +2,7 @@ import '../style.scss'
 import {createTopic} from './topic'
 import { createSettingsBlock } from './settings';
 import { createStartButton } from './start';
-import { createQustionBlock } from './question';
-import { createLifesBlock } from './lifes';
-import { createAnswersBlock } from './answers';
+
 
 const topics:HTMLElement = document.querySelector('.topics')!;
 
@@ -28,6 +26,3 @@ const topicRender = () => {
 topicRender();
 createSettingsBlock();
 createStartButton();
-createQustionBlock();
-createLifesBlock();
-createAnswersBlock();
