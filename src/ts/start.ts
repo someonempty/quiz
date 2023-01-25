@@ -1,10 +1,6 @@
 const main:HTMLElement = document.querySelector('main')!;
 const gamePage:HTMLElement = document.querySelector('.game-page')!;
-import { fetching } from "./fetching";
-import { selectedTopics } from "./topic";
-import { selectedCountButton } from "./settings";
-import { selectedDifficultyButton } from "./settings";
-import { createQustionBlock } from './question';
+import { createQuestionBlock } from './question';
 import { createLifesBlock } from './lifes';
 import { createAnswersBlock } from './answers';
  
@@ -18,8 +14,8 @@ import { createAnswersBlock } from './answers';
     startButton.onclick = () => {
         main.style.display = 'none';
         gamePage.style.display = 'flex';
-        fetching(selectedTopics, +selectedCountButton, selectedDifficultyButton);
-        createQustionBlock();
+        
+        createQuestionBlock();
         createLifesBlock();
         createAnswersBlock();
     }

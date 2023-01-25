@@ -155,11 +155,18 @@ main {
 }
 
 .question-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 85px;
   height: 350px;
   width: 1400px;
   background: rgba(91, 64, 64, 0.74);
   border-radius: 32px;
+  font-size: 60px;
+  line-height: 73px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .lifes-block {
@@ -171,9 +178,20 @@ main {
 }
 
 .answers-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   margin-top: 27px;
   height: 350px;
   width: 1400px;
   background: rgba(91, 64, 64, 0.74);
   border-radius: 32px;
+}
+
+.first-answer, .second-answer, .third-answer {
+  cursor: pointer;
+  background-color: #705757;
+  border-radius: 25px;
+  height: 170px;
+  width: 400px;
 }
