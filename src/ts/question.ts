@@ -2,23 +2,27 @@ import { fetching } from "./fetching";
 import { selectedTopics } from "./topic";
 import { selectedCountButton } from "./settings";
 import { selectedDifficultyButton } from "./settings";
- 
- const gamePage:HTMLElement = document.querySelector('.game-page')!;
+import { createAnswersBlock } from "./answers";
+import { createLifesBlock } from "./lifes";
 
- export const createQuestionBlock = async () => {
-    const questionBlock = document.createElement('div');
+const gamePage: HTMLElement = document.querySelector('.game-page')!;
+export let questions: any;
 
-    questionBlock.classList.add('question-block');
+export const createQuestionBlock = async () => {
+   const questionBlock = document.createElement('div');
 
-    const questions = await fetching(selectedTopics, +selectedCountButton, selectedDifficultyButton);
+   questionBlock.classList.add('question-block');
 
-    console.log(questions);
-    
-    questions.forEach((element: { question: string; }) => {
-      questionBlock.innerText = element.question;
-    });
-    
-    gamePage.appendChild(questionBlock);
+   questions = await fetching(selectedTopics, selectedCountButton, selectedDifficultyButton);
+   console.log(questions);
 
-    return questionBlock;
- }
+   questionBlock.innerText = questions[0].question;
+
+   gamePage.appendChild(questionBlock);
+
+   createLifesBlock();
+
+   createAnswersBlock(questions);
+
+   return questionBlock;
+}

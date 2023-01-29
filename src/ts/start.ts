@@ -1,8 +1,7 @@
 const main:HTMLElement = document.querySelector('main')!;
 const gamePage:HTMLElement = document.querySelector('.game-page')!;
+
 import { createQuestionBlock } from './question';
-import { createLifesBlock } from './lifes';
-import { createAnswersBlock } from './answers';
  
  export const createStartButton = () => {
     const startButton = document.createElement('button');
@@ -16,8 +15,6 @@ import { createAnswersBlock } from './answers';
         gamePage.style.display = 'flex';
         
         createQuestionBlock();
-        createLifesBlock();
-        createAnswersBlock();
     }
 
     return startButton;

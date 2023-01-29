@@ -3,7 +3,7 @@
 const topics:HTMLElement = document.querySelector('.topics')!;
 export let selectedTopics:any = [];
 
-export const createTopic = (title:any, data:any) => {
+export const createTopic = (title:string, data:string) => {
 
     const topic = document.createElement('div');
     const topicTitle = document.createElement('span');
@@ -19,7 +19,6 @@ export const createTopic = (title:any, data:any) => {
         if (topic.classList.contains('topic-active')) {
             selectedTopics.push(topic.dataset.value?.toString());
         }
-            
     })
 
     topic.classList.add('topic');

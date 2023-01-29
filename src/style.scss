@@ -188,10 +188,15 @@ main {
   border-radius: 32px;
 }
 
-.first-answer, .second-answer, .third-answer {
+.first-answer, .second-answer, .third-answer, .fourth-answer {
   cursor: pointer;
+  border: none;
   background-color: #705757;
   border-radius: 25px;
-  height: 170px;
-  width: 400px;
+  height: 150px;
+  width: 300px;
+  font-size: 43px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFFFFF;
 }

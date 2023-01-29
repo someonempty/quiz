@@ -1,6 +1,6 @@
 
-export const fetching = async (categories:any, limit:any, difficulty:any) => {
+export const fetching = async (categories: string, limit: string, difficulty: string) => {
     const res = await fetch(`https://the-trivia-api.com/api/questions?limit=${limit}&difficulty=${difficulty}&categories=${categories}`)
-    .then(res => res.json())
+        .then(res => res.json())
     return res
 }

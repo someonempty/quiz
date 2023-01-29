@@ -23,6 +23,7 @@ const topicRender = () => {
     })
 }
 
+
 topicRender();
 createSettingsBlock();
 createStartButton();
