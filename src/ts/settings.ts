@@ -1,9 +1,6 @@
-
 const main: HTMLElement = document.querySelector('main')!;
-export let selectedDifficultyButton:string;
-export let selectedCountButton:string;
 
-export const createSettingsBlock = () => {
+export const createSettingsBlock = (onCheckDifficulty:Function, onCheckCount:Function) => {
 
     const settings = document.createElement('div');
 
@@ -98,47 +95,28 @@ export const createSettingsBlock = () => {
     thirtyCustom.innerText = '30';
     fiftyCustom.innerText = '50';
 
-    const radios:any = document.querySelectorAll('input[name="difficulty"]');
-    const counts:any = document.querySelectorAll('input[name="count"]');
-
-    function checkDifficulty() {
-        for (const r of radios) {
-            if (r.checked) {
-              selectedDifficultyButton = r.value;
-            }
-          }
-    }
-
-    function checkCount() {
-        for (const c of counts) {
-            if (c.checked) {
-              selectedCountButton = c.value;
-            }
-          }
-    }
-
     easy.addEventListener('click', () => {
-        checkDifficulty();
+        onCheckDifficulty();
     });
 
     medium.addEventListener('click', () => {
-        checkDifficulty();
+        onCheckDifficulty();
     });
 
     hard.addEventListener('click', () => {
-        checkDifficulty();
+        onCheckDifficulty();
     });
 
     fifteen.addEventListener('click', () => {
-        checkCount();
+        onCheckCount();
     });
 
     thirty.addEventListener('click', () => {
-        checkCount();
+        onCheckCount();
     });
 
     fifty.addEventListener('click', () => {
-        checkCount();
+        onCheckCount();
     });
 
     return settings;

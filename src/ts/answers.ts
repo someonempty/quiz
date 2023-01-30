@@ -2,7 +2,7 @@
 const gamePage: HTMLElement = document.querySelector('.game-page')!;
 export let answers: { incorrectAnswers: string; }[];
 
-export const createAnswersBlock = (answers: any) => {
+export const createAnswersBlock = () => {
     const answersBlock = document.createElement('div');
     const firstAnswer = document.createElement('button');
     const secondAnswer = document.createElement('button');
@@ -15,10 +15,15 @@ export const createAnswersBlock = (answers: any) => {
     thirdAnswer.classList.add('third-answer');
     fourthAnswer.classList.add('fourth-answer');
 
-    firstAnswer.innerText = answers[0].incorrectAnswers[0];
-    secondAnswer.innerText = answers[0].incorrectAnswers[1];
-    thirdAnswer.innerText = answers[0].incorrectAnswers[2];
-    fourthAnswer.innerText = answers[0].correctAnswer;
+    // firstAnswer.innerText = answers.incorrectAnswers[0];
+    // secondAnswer.innerText = answers.incorrectAnswers[1];
+    // thirdAnswer.innerText = answers.incorrectAnswers[2];
+    // fourthAnswer.innerText = answers.correctAnswer;
+
+    // firstAnswer.addEventListener('click', () => {
+    //     console.log('click');
+    //     onChangeQuestionIndex();
+    // })
 
     gamePage.appendChild(answersBlock);
     answersBlock.appendChild(firstAnswer);

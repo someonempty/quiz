@@ -1,7 +1,6 @@
-
+import { selectedTopics } from "./pageOne";
 
 const topics:HTMLElement = document.querySelector('.topics')!;
-export let selectedTopics:any = [];
 
 export const createTopic = (title:string, data:string) => {
 
@@ -10,6 +9,7 @@ export const createTopic = (title:string, data:string) => {
 
     topics.appendChild(topic);
     topic.appendChild(topicTitle);
+
     topicTitle.innerHTML = title;
 
     topic.setAttribute("data-value", data);
@@ -18,12 +18,12 @@ export const createTopic = (title:string, data:string) => {
         topic.classList.toggle('topic-active');
         if (topic.classList.contains('topic-active')) {
             selectedTopics.push(topic.dataset.value?.toString());
+            console.log(selectedTopics);
         }
     })
 
     topic.classList.add('topic');
     topicTitle.classList.add('topic-title');
-
 
     return topic;
 }
