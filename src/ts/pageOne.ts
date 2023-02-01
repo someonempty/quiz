@@ -2,24 +2,25 @@ import '../style.scss'
 import { createTopic } from "./topic";
 import { createSettingsBlock } from "./settings";
 import { createStartButton } from "./start";
+import { createSecondPage } from './pageTwo';
 
 const topics:HTMLElement = document.querySelector('.topics')!;
 export let selectedTopics:any = [];
 export let selectedDifficultyButton:string;
 export let selectedCountButton:string;
 
+const topicsArray = [
+    {title: 'General', data: 'General'}, 
+    {title: 'Geography', data: 'Geography'}, 
+    {title: 'Sport', data: 'Sport'},
+    {title: 'History', data: 'History'}, 
+    {title: 'Arts', data: 'Arts'},
+    {title: 'Films', data: 'Film'}, 
+    {title: 'Science', data: 'Science'}, 
+    {title: 'Food', data: 'Food'}
+];
+
 export const createFirstPage = () => {
-    const topicsArray = [
-        {title: 'General', data: 'General'}, 
-        {title: 'Geography', data: 'Geography'}, 
-        {title: 'Sport', data: 'Sport'},
-        {title: 'History', data: 'History'}, 
-        {title: 'Arts', data: 'Arts'},
-        {title: 'Films', data: 'Film'}, 
-        {title: 'Science', data: 'Science'}, 
-        {title: 'Food', data: 'Food'}
-    ];
-    
     const topicRender = () => {
         topicsArray.forEach(topic => {
             topics.appendChild(createTopic(topic.title, topic.data))
@@ -48,7 +49,5 @@ export const createFirstPage = () => {
     
     topicRender();
     createSettingsBlock(checkDifficulty, checkCount);
-    createStartButton();
+    createStartButton(createSecondPage);
 }
-
- 
