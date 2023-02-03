@@ -1,27 +1,25 @@
 import { createQuestionBlock } from "./question";
 import { createLifesBlock } from "./lifes";
 import { createAnswersBlock } from "./answers";
-import { fetching } from "./fetching";
-import { selectedTopics } from "./pageOne";
-import { selectedDifficultyButton } from "./pageOne";
-import { selectedCountButton } from "./pageOne";
+// import { fetching } from "./fetching";
+// import { selectedTopics } from "./pageOne";
+// import { selectedDifficultyButton } from "./pageOne";
+// import { selectedCountButton } from "./pageOne";
 
 export let questionIndex:number = 0;
-// let answerIndex:number = 0;
+export let answerIndex:number = 0;
+
 const changeQuestionIndex = () => {
     questionIndex += 1;
 }
 
-// const changeAnswerIndex = () => {
-//     answerIndex += 1;
-// }
-// getDataBase();
+const changeAnswersIndex = () => {
+    answerIndex += 1;
+}
 
+export const createSecondPage = (dataBase:any) => {
 
-export const createSecondPage = async () => {
-    const dataBase = await fetching(selectedTopics, selectedCountButton, selectedDifficultyButton);
-    console.log(dataBase);
     createQuestionBlock(dataBase);
     createLifesBlock();
-    createAnswersBlock(dataBase, changeQuestionIndex);
+    createAnswersBlock(dataBase, changeQuestionIndex, changeAnswersIndex);
 }

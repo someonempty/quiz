@@ -1,3 +1,5 @@
+import { getDataBase } from "./getDataBase";
+import { dataBase } from "./getDataBase";
 
 const main: HTMLElement = document.querySelector('main')!;
 const gamePage: HTMLElement = document.querySelector('.game-page')!;
@@ -12,7 +14,9 @@ export const createStartButton = (onCreateSecondPage:Function) => {
     startButton.onclick = async () => {
         main.style.display = 'none';
         gamePage.style.display = 'flex';
-        onCreateSecondPage();
+        await getDataBase();
+        await console.log(dataBase);
+        onCreateSecondPage(dataBase);
     }
 
     return startButton;
