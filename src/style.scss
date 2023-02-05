@@ -169,13 +169,58 @@ main {
   color: #FFFFFF;
 }
 
-.lifes-block {
+.count-and-lifes-block {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px 10px 0px;
   margin-top: 27px;
   height: 93px;
   width: 750px;
   background-color: rgba(91, 64, 64, 0.78);
   border-radius: 32px;
 }
+
+.count-block {
+  font-size: 60px;
+  line-height: 60px;
+  color: #FFFFFF;
+}
+
+.lifes-block {
+  display: flex;
+  justify-content: space-between;
+  min-width: 240px;
+  position: relative; // установим родителя
+}
+
+.life {
+    width: 40px; // ширина
+    height: 40px; // высота
+      background-color: red; // цвет
+    transform: rotate(45deg);
+}
+
+.life::before,
+.life::after {
+    content : ''; // обязательное свойство
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%; // закругление радиуса
+    position: absolute;
+}
+
+.life::before {
+  top: -23px;
+  left: 0;
+}
+
+.life::after {
+  top: 0;
+  left: -23px;
+}   
 
 .answers-block {
   display: flex;

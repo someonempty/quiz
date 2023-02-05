@@ -1,11 +1,12 @@
 import { createSecondPage } from "./pageTwo";
 import { dataBase } from "./getDataBase";
 import { answerIndex } from "./pageTwo";
+import { lifes } from "./pageTwo";
 
 const gamePage: HTMLElement = document.querySelector('.game-page')!;
 export let answers: { incorrectAnswers: string; }[];
 
-export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, onChangeAnswersIndex:Function) => {
+export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, onChangeAnswersIndex:Function, onLosingLife:Function) => {
     const answersBlock = document.createElement('div');
     const firstAnswer = document.createElement('button');
     const secondAnswer = document.createElement('button');
@@ -25,9 +26,12 @@ export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, 
 
     firstAnswer.addEventListener('click', () => {
         console.log('click');
+        firstAnswer.classList.toggle('first-answer-active');
         onChangeQuestionIndex();
         onChangeAnswersIndex();
         createSecondPage(dataBase);
+        onLosingLife();
+        console.log(lifes);
     })
 
     secondAnswer.addEventListener('click', () => {
@@ -35,13 +39,21 @@ export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, 
         onChangeQuestionIndex();
         onChangeAnswersIndex();
         createSecondPage(dataBase);
+        onLosingLife();
+        console.log(lifes);
     })
+
+    if (!lifes) {
+        alert('you have lost');
+    }
 
     thirdAnswer.addEventListener('click', () => {
         console.log('click');
         onChangeQuestionIndex();
         onChangeAnswersIndex();
         createSecondPage(dataBase);
+        onLosingLife();
+        console.log(lifes);
     })
 
     fourthAnswer.addEventListener('click', () => {

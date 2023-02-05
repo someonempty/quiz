@@ -1,13 +1,10 @@
 import { createQuestionBlock } from "./question";
-import { createLifesBlock } from "./lifes";
+import { createLifesBlock } from "./countAndLifes";
 import { createAnswersBlock } from "./answers";
-// import { fetching } from "./fetching";
-// import { selectedTopics } from "./pageOne";
-// import { selectedDifficultyButton } from "./pageOne";
-// import { selectedCountButton } from "./pageOne";
 
 export let questionIndex:number = 0;
 export let answerIndex:number = 0;
+export let lifes:number = 3;
 
 const changeQuestionIndex = () => {
     questionIndex += 1;
@@ -17,9 +14,13 @@ const changeAnswersIndex = () => {
     answerIndex += 1;
 }
 
-export const createSecondPage = (dataBase:any) => {
+const losingLife = () => {
+    lifes -= 1;
+}
 
+
+export const createSecondPage = (dataBase:any) => {
     createQuestionBlock(dataBase);
-    createLifesBlock();
-    createAnswersBlock(dataBase, changeQuestionIndex, changeAnswersIndex);
+    createLifesBlock(questionIndex);
+    createAnswersBlock(dataBase, changeQuestionIndex, changeAnswersIndex, losingLife);
 }
