@@ -1,25 +1,31 @@
-import { countAndLifesBlock } from "./countAndLifes";
-import { gamePage } from "./countAndLifes";
+import { countAndLifesBlock } from "./count";
+import { gamePage } from "./count";
 
-export const createLifesBlock = () => {
-
-    // countAndLifesBlock.innerHTML = '';
+export const createLifesBlock = (lifes:any) => {
 
     const lifesBlock = document.createElement('div');
-    const lifeOne = document.createElement('div');
-    const lifeTwo = document.createElement('div');
-    const lifeThree = document.createElement('div');
+
+    for (lifes; lifes > 0; lifes--) {
+        const lifeOne = document.createElement('div');
+        lifeOne.classList.add('life');
+        lifesBlock.appendChild(lifeOne);
+        console.log(lifes);
+    }
+        
+    
+    // const lifeTwo = document.createElement('div');
+    // const lifeThree = document.createElement('div');
 
     lifesBlock.classList.add('lifes-block');
-    lifeOne.classList.add('life');
-    lifeTwo.classList.add('life');
-    lifeThree.classList.add('life');
+    
+    // lifeTwo.classList.add('life');
+    // lifeThree.classList.add('life');
 
     gamePage.appendChild(countAndLifesBlock);
     countAndLifesBlock.appendChild(lifesBlock);
-    lifesBlock.appendChild(lifeOne);
-    lifesBlock.appendChild(lifeTwo);
-    lifesBlock.appendChild(lifeThree);
+    
+    // lifesBlock.appendChild(lifeTwo);
+    // lifesBlock.appendChild(lifeThree);
 
     return lifesBlock;
 }

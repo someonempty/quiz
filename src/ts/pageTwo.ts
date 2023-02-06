@@ -1,5 +1,5 @@
 import { createQuestionBlock } from "./question";
-import { createCountBlock } from "./countAndLifes";
+import { createCountBlock } from "./count";
 import { createLifesBlock } from "./lifes";
 import { createAnswersBlock } from "./answers";
 
@@ -22,9 +22,17 @@ const losingLife = () => {
 }
 
 
-export const createSecondPage = (dataBase:any) => {
+
+export const createSecondPage = async (dataBase:any) => {
     createQuestionBlock(dataBase);
     createCountBlock(questionIndex);
-    createLifesBlock();
-    createAnswersBlock(dataBase, changeQuestionIndex, changeAnswersIndex, losingLife);
+
+    if (lifes < 3) {
+        createLifesBlock(lifes);
+    }
+    else {
+        createLifesBlock(lifes--);
+    }
+    
+    await createAnswersBlock(dataBase, changeQuestionIndex, changeAnswersIndex, losingLife);
 }
