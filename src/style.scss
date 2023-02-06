@@ -171,9 +171,9 @@ main {
 
 .count-and-lifes-block {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 124px 10px 124px;
   margin-top: 27px;
   height: 93px;
   width: 750px;
@@ -189,7 +189,7 @@ main {
 
 .lifes-block {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-width: 240px;
   position: relative; // установим родителя
 }
@@ -199,6 +199,7 @@ main {
     height: 40px; // высота
       background-color: red; // цвет
     transform: rotate(45deg);
+    margin-right: 50px;
 }
 
 .life::before,

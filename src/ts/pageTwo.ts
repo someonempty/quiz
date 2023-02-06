@@ -1,5 +1,6 @@
 import { createQuestionBlock } from "./question";
-import { createLifesBlock } from "./countAndLifes";
+import { createCountBlock } from "./countAndLifes";
+import { createLifesBlock } from "./lifes";
 import { createAnswersBlock } from "./answers";
 
 export let questionIndex:number = 0;
@@ -16,11 +17,14 @@ const changeAnswersIndex = () => {
 
 const losingLife = () => {
     lifes -= 1;
+
+    return lifes;
 }
 
 
 export const createSecondPage = (dataBase:any) => {
     createQuestionBlock(dataBase);
-    createLifesBlock(questionIndex);
+    createCountBlock(questionIndex);
+    createLifesBlock();
     createAnswersBlock(dataBase, changeQuestionIndex, changeAnswersIndex, losingLife);
 }
