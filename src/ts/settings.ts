@@ -1,6 +1,5 @@
-const main: HTMLElement = document.querySelector('main')!;
 
-export const createSettingsBlock = (onCheckDifficulty:Function, onCheckCount:Function) => {
+export const SettingsBlock = (onCheckDifficulty:Function, onCheckCount:Function) => {
 
     const settings = document.createElement('div');
 
@@ -64,7 +63,6 @@ export const createSettingsBlock = (onCheckDifficulty:Function, onCheckCount:Fun
     fifty.classList.add('fifty');
     fiftyCustom.classList.add('count-button');
 
-    main.appendChild(settings);
     settings.appendChild(difficulty);
     settings.appendChild(easyLabel);
     settings.appendChild(mediumLabel);

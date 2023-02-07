@@ -1,12 +1,6 @@
 import { createSecondPage } from "./pageTwo";
-import { dataBase } from "./getDataBase";
-import { answerIndex } from "./pageTwo";
-import { lifes } from "./pageTwo";
 
-const gamePage: HTMLElement = document.querySelector('.game-page')!;
-export let answers: { incorrectAnswers: string; }[];
-
-export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, onChangeAnswersIndex:Function, onLosingLife:Function) => {
+export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onChangeQuestionIndex:Function, onChangeAnswersIndex:Function, onLosingLife:Function, onGetDataBase:Function) => {
     const answersBlock = document.createElement('div');
     const firstAnswer = document.createElement('button');
     const secondAnswer = document.createElement('button');
@@ -29,16 +23,17 @@ export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, 
         firstAnswer.classList.toggle('first-answer-active');
         onChangeQuestionIndex();
         onChangeAnswersIndex();
-        createSecondPage(dataBase);
+        createSecondPage(onGetDataBase);
         onLosingLife();
         console.log(lifes);
+
     })
 
     secondAnswer.addEventListener('click', () => {
         console.log('click');
         onChangeQuestionIndex();
         onChangeAnswersIndex();
-        createSecondPage(dataBase);
+        createSecondPage(onGetDataBase);
         onLosingLife();
         console.log(lifes);
     })
@@ -51,7 +46,7 @@ export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, 
         console.log('click');
         onChangeQuestionIndex();
         onChangeAnswersIndex();
-        createSecondPage(dataBase);
+        createSecondPage(onGetDataBase);
         onLosingLife();
         console.log(lifes);
     })
@@ -60,11 +55,9 @@ export const createAnswersBlock = (answers:any, onChangeQuestionIndex:Function, 
         console.log('click');
         onChangeQuestionIndex();
         onChangeAnswersIndex();
-        createSecondPage(dataBase);
+        createSecondPage(onGetDataBase);
     })
 
-
-    gamePage.appendChild(answersBlock);
     answersBlock.appendChild(firstAnswer);
     answersBlock.appendChild(secondAnswer);
     answersBlock.appendChild(thirdAnswer);

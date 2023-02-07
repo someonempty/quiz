@@ -1,18 +1,11 @@
-import { questionIndex } from "./pageTwo";
 
-const gamePage: HTMLElement = document.querySelector('.game-page')!;
-
-export const createQuestionBlock = (questions:any) => {
+export const QuestionBlock = (questions:any, questionIndex:number) => {
 
    const questionBlock = document.createElement('div');
-
-   gamePage.innerHTML = '';
 
    questionBlock.innerText = questions[questionIndex].question;
 
    questionBlock.classList.add('question-block');
 
-   gamePage.appendChild(questionBlock);
-
    return questionBlock;
-}
+} 

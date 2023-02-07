@@ -1,13 +1,9 @@
-import { selectedTopics } from "./pageOne";
 
-const topics:HTMLElement = document.querySelector('.topics')!;
-
-export const createTopic = (title:string, data:string) => {
+export const Topic = (title:any, data:any, selectedTopics:any) => {
 
     const topic = document.createElement('div');
     const topicTitle = document.createElement('span');
 
-    topics.appendChild(topic);
     topic.appendChild(topicTitle);
 
     topicTitle.innerHTML = title;
