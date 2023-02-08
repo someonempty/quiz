@@ -19,23 +19,17 @@ export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onCh
     fourthAnswer.innerText = answers[answerIndex].correctAnswer;
 
     firstAnswer.addEventListener('click', () => {
-        console.log('click');
-        firstAnswer.classList.toggle('first-answer-active');
+        onLosingLife();
         onChangeQuestionIndex();
         onChangeAnswersIndex();
         createSecondPage(onGetDataBase);
-        onLosingLife();
-        console.log(lifes);
-
     })
 
     secondAnswer.addEventListener('click', () => {
-        console.log('click');
+        onLosingLife();
         onChangeQuestionIndex();
         onChangeAnswersIndex();
         createSecondPage(onGetDataBase);
-        onLosingLife();
-        console.log(lifes);
     })
 
     if (!lifes) {
@@ -43,16 +37,13 @@ export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onCh
     }
 
     thirdAnswer.addEventListener('click', () => {
-        console.log('click');
+        onLosingLife();
         onChangeQuestionIndex();
         onChangeAnswersIndex();
         createSecondPage(onGetDataBase);
-        onLosingLife();
-        console.log(lifes);
     })
 
     fourthAnswer.addEventListener('click', () => {
-        console.log('click');
         onChangeQuestionIndex();
         onChangeAnswersIndex();
         createSecondPage(onGetDataBase);

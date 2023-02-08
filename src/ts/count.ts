@@ -1,5 +1,5 @@
 
-export const createCountBlock = (questionIndex:number, selectedCountButton:any) => {
+export const CountBlock = (questionIndex:number, selectedCountButton:any) => {
 
     const countBlock = document.createElement('div');
     
