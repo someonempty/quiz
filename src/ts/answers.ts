@@ -1,6 +1,6 @@
 import { createSecondPage } from "./pageTwo";
 
-export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onChangeQuestionIndex:Function, onChangeAnswersIndex:Function, onLosingLife:Function, onGetDataBase:Function) => {
+export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onChangeQuestionIndex:Function, onChangeAnswersIndex:Function, onLosingLife:Function, onGetDataBase:Function, onStopGame:Function) => {
     const answersBlock = document.createElement('div');
     const firstAnswer = document.createElement('button');
     const secondAnswer = document.createElement('button');
@@ -51,7 +51,7 @@ export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onCh
     answersBlock.appendChild(fourthAnswer);
     
     if (!lifes) {
-        alert('you have lost');
+        onStopGame();
     }
 
     return answersBlock;

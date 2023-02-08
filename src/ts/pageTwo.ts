@@ -42,7 +42,7 @@ const countAndLifesBlockRender = () => {
 }
 
 const answersBlockRender = (dataBase:any) => {
-    gamePage.appendChild(AnswersBlock(dataBase, answerIndex, lifes, changeQuestionIndex, changeAnswersIndex, losingLife, dataBase));
+    gamePage.appendChild(AnswersBlock(dataBase, answerIndex, lifes, changeQuestionIndex, changeAnswersIndex, losingLife, dataBase, stopGame));
 }
 
 // -----------------------------------------------Вспомогательные функции-----------------------------------------------
@@ -58,6 +58,11 @@ const changeQuestionIndex = () => {
 const losingLife = () => {
     lifes -= 1;
     return lifes;
+}
+
+const stopGame = () => {
+    gamePage.style.display='none';
+    alert('You have lost!');
 }
 // -----------------------------------------------Функция создания второй страницы-----------------------------------------------
 
