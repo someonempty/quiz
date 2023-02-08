@@ -28,14 +28,16 @@ const questionBlockRender = (dataBase:any) => {
 }
 
 const heartsRender = () => {
-    return Life();
+    lifesBlock.innerHTML = ''
+    for (let i = 0; i < lifes; i++) {
+        lifesBlock.appendChild(Life());
+    }
 }
 
 const countAndLifesBlockRender = () => {
     countAndLifesBlock.innerHTML = '';
     countAndLifesBlock.appendChild(CountBlock(questionIndex, selectedCountButton));
     countAndLifesBlock.appendChild(lifesBlock);
-    lifesBlock.appendChild(heartsRender());
     gamePage.appendChild(countAndLifesBlock);
 }
 
@@ -57,10 +59,10 @@ const losingLife = () => {
     lifes -= 1;
     return lifes;
 }
-
-// -----------------------------------------------Фунция создания второй страницы-----------------------------------------------
+// -----------------------------------------------Функция создания второй страницы-----------------------------------------------
 
 export const createSecondPage = async (dataBase: any) => {
+    heartsRender();
     questionBlockRender(dataBase);
     countAndLifesBlockRender();
     answersBlockRender(dataBase);

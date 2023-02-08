@@ -32,10 +32,6 @@ export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onCh
         createSecondPage(onGetDataBase);
     })
 
-    if (!lifes) {
-        alert('you have lost');
-    }
-
     thirdAnswer.addEventListener('click', () => {
         onLosingLife();
         onChangeQuestionIndex();
@@ -53,6 +49,10 @@ export const AnswersBlock = (answers:any, answerIndex:number, lifes:number, onCh
     answersBlock.appendChild(secondAnswer);
     answersBlock.appendChild(thirdAnswer);
     answersBlock.appendChild(fourthAnswer);
+    
+    if (!lifes) {
+        alert('you have lost');
+    }
 
     return answersBlock;
 }
