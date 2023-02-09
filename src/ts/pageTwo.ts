@@ -3,7 +3,7 @@
 import { QuestionBlock } from "./question";
 import { CountBlock } from "./count";
 import { Life } from "./lifes";
-import { AnswersBlock } from "./answers";
+import { AnswersBlock } from "./answersBlock";
 import { selectedCountButton } from "./pageOne";
 import { LifesBlock } from "./lifesBlock";
 import { CountAndLifesBlock } from "./countAndLifesBlock";
@@ -64,6 +64,10 @@ const stopGame = () => {
     gamePage.style.display='none';
     alert('You have lost!');
 }
+
+// const getRandomInt = (max:number) => {
+//     return Math.floor(Math.random() * max);
+//   }
 // -----------------------------------------------Функция создания второй страницы-----------------------------------------------
 
 export const createSecondPage = async (dataBase: any) => {
