@@ -6,6 +6,9 @@ export const CountBlock = (questionIndex:number, selectedCountButton:any) => {
     countBlock.classList.add('count-block');
 
     countBlock.innerText = questionIndex.toString() + '/' + selectedCountButton;
-
+    
+    if (questionIndex == selectedCountButton) {
+        alert('You won, congratulations!');
+    }
     return countBlock;
 }
