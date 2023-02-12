@@ -9,6 +9,7 @@ html, body, main {
   height: 100%;
   width: 100%;
 }
+
 body {
   background: linear-gradient(160deg, #F33C3C 0%, #7E1F69 100%);
 }
@@ -19,7 +20,18 @@ main {
   align-items: center;
 }
 
-// ---------------------------------------Topics---------------------------------------
+.game-page {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// -----------------------------------------------------PAGE ONE-------------------------------------------------------
+
+
+
+// ---------------------------------------Topics block---------------------------------------
 
 .topics {
   height: 600px;
@@ -48,8 +60,7 @@ main {
   font-size: 35px;
   color: #ffffff;
 }
-
-// ---------------------------------------Settings---------------------------------------
+// ---------------------------------------Settings block---------------------------------------
 
 .settings {
   display: flex;
@@ -130,6 +141,10 @@ main {
   border: 2px solid #DB6767;
 }
 
+
+
+// ----------------------------------------Start button block----------------------------------------
+
 .start-button {
   height: 100px;
   width: 370px;
@@ -145,14 +160,16 @@ main {
   }
 }
 
-// ---------------------------------------Game page---------------------------------------
 
-.game-page {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
+
+
+// ------------------------------------------------PAGE TWO--------------------------------------------------------------
+
+
+
+// ----------------------------------------Question block----------------------------------------
+
 
 .question-block {
   display: flex;
@@ -168,6 +185,11 @@ main {
   text-align: center;
   color: #FFFFFF;
 }
+
+
+
+// ----------------------------------------Count block----------------------------------------
+
 
 .count-and-lifes-block {
   display: flex;
@@ -187,29 +209,33 @@ main {
   color: #FFFFFF;
 }
 
+
+
+// ----------------------------------------Lifes block----------------------------------------
+
 .lifes-block {
   display: flex;
   justify-content: flex-start;
   min-width: 240px;
-  position: relative; // установим родителя
+  position: relative;
 }
 
 .life {
-    width: 40px; // ширина
-    height: 40px; // высота
-      background-color: red; // цвет
+    width: 40px;
+    height: 40px;
+    background-color: red;
     transform: rotate(45deg);
     margin-right: 50px;
 }
 
 .life::before,
 .life::after {
-    content : ''; // обязательное свойство
+    content : '';
     display: block;
     width: 40px;
     height: 40px;
     background-color: red;
-    border-radius: 50%; // закругление радиуса
+    border-radius: 50%;
     position: absolute;
 }
 
@@ -222,6 +248,11 @@ main {
   top: 0;
   left: -23px;
 }   
+
+
+
+
+// ----------------------------------------Answers block----------------------------------------
 
 .answers-block {
   display: flex;

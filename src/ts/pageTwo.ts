@@ -50,7 +50,7 @@ const countAndLifesBlockRender = () => {
     gamePage.appendChild(countAndLifesBlock);
 }
 
-export const answersRender= (dataBase: any) => {
+export const answersRender= (dataBase: Data) => {
     let answersArray:Array<string> = [];
     let correctAnswer:string;
     answersArray.push(dataBase[answerIndex].correctAnswer, dataBase[answerIndex].incorrectAnswers[0], dataBase[answerIndex].incorrectAnswers[1], dataBase[answerIndex].incorrectAnswers[2]);
@@ -90,17 +90,17 @@ function losingLife() {
 function stopGame() {
   
         setTimeout(() => {
-            alert('You have lost');
+            alert('You have lost!');
             gamePage.style.display='none';
         }, 100)
 }
 
-function shuffle(array:any) {
+function shuffle(array:string[]) {
     array.sort(() => Math.random() - 0.5);
   }
 
 // -----------------------------------------------Функция создания второй страницы-----------------------------------------------
-export const createSecondPage = async (dataBase: any) => {
+export const createSecondPage = async (dataBase: Data) => {
     heartsRender();
     questionBlockRender(dataBase);
     countAndLifesBlockRender();

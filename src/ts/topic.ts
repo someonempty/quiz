@@ -1,5 +1,5 @@
 
-export const Topic = (title:any, data:any, selectedTopics:any) => {
+export const Topic = (title:string, data:string, selectedTopics: any) => {
 
     const topic = document.createElement('div');
     const topicTitle = document.createElement('span');
@@ -13,7 +13,7 @@ export const Topic = (title:any, data:any, selectedTopics:any) => {
     topic.addEventListener('click', () => {
         topic.classList.toggle('topic-active');
         if (topic.classList.contains('topic-active')) {
-            selectedTopics.push(topic.dataset.value?.toString());
+            selectedTopics.push(topic.dataset.value);
             console.log(selectedTopics);
         } else {
             selectedTopics.pop();
