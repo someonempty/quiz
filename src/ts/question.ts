@@ -1,5 +1,6 @@
+import { Data } from "./pageTwo";
 
-export const QuestionBlock = (questions:any, questionIndex:number) => {
+export const QuestionBlock = (questions:Data, questionIndex:number) => {
 
    const questionBlock = document.createElement('div');
 

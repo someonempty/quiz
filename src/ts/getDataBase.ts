@@ -2,8 +2,9 @@ import { fetching } from "./fetching";
 import { selectedTopics } from "./pageOne";
 import { selectedDifficultyButton } from "./pageOne";
 import { selectedCountButton } from "./pageOne";
+import { Data } from "./pageTwo";
 
-export let dataBase:any;
+export let dataBase:Data;
 
 export const getDataBase = async () => {
     

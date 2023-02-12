@@ -7,12 +7,26 @@ import { LifesBlock } from "./lifesBlock";
 import { CountAndLifesBlock } from "./countAndLifesBlock";
 import { Answer } from "./answersBlock";
 
+
+
+export type Data = [{
+     category: string, 
+    correctAnswer: string,
+     difficulty: string,
+      id: string,
+       incorrectAnswers: string [],
+       isNiche: boolean,
+       question: string,
+       regions: [],
+       tags: string [],
+       type: string
+    }] ;
+
+
 // -----------------------------------------------Общие переменные-----------------------------------------------
 export let questionIndex: number = 1;
 export let answerIndex: number = 0;
 export let lifes: number = 3;
-
-// if (questionIndex == )
 
 // -----------------------------------------------Получаю дом элемент(ы)-----------------------------------------------
 const gamePage: HTMLElement = document.querySelector('.game-page')!;
@@ -39,9 +53,9 @@ const countAndLifesBlockRender = () => {
     gamePage.appendChild(countAndLifesBlock);
 }
 
-export const answersRender= (dataBase:any) => {
-    let answersArray:any = [];
-    let correctAnswer:any;
+export const answersRender= (dataBase: any) => {
+    let answersArray:Array<string> = [];
+    let correctAnswer:string;
     answersArray.push(dataBase[answerIndex].correctAnswer, dataBase[answerIndex].incorrectAnswers[0], dataBase[answerIndex].incorrectAnswers[1], dataBase[answerIndex].incorrectAnswers[2]);
     shuffle(answersArray); 
     correctAnswer = dataBase[answerIndex].correctAnswer;
