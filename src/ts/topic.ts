@@ -15,6 +15,9 @@ export const Topic = (title:any, data:any, selectedTopics:any) => {
         if (topic.classList.contains('topic-active')) {
             selectedTopics.push(topic.dataset.value?.toString());
             console.log(selectedTopics);
+        } else {
+            selectedTopics.pop();
+            console.log(selectedTopics);
         }
     })
 

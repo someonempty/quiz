@@ -19,7 +19,6 @@ export const Answer = (dataBase:any, lifes:number, onChangeQuestionIndex:Functio
             createSecondPage(dataBase);
             
         })
-
         
         return answer;
 }

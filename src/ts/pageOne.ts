@@ -27,6 +27,7 @@ const topicRender = () => {
   topicsArray.forEach(topic => {
       topics.appendChild(Topic(topic.title, topic.data, selectedTopics))
   })
+  topicsArray.filter
 }
 
 function checkDifficulty() {
