@@ -57,7 +57,7 @@ export const answersRender= (dataBase: any) => {
     let answersArray:Array<string> = [];
     let correctAnswer:string;
     answersArray.push(dataBase[answerIndex].correctAnswer, dataBase[answerIndex].incorrectAnswers[0], dataBase[answerIndex].incorrectAnswers[1], dataBase[answerIndex].incorrectAnswers[2]);
-    shuffle(answersArray); 
+    // shuffle(answersArray); 
     correctAnswer = dataBase[answerIndex].correctAnswer;
     let answersBlock = document.createElement('div');
     answersBlock.classList.add('answers-block');
