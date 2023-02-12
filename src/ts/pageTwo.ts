@@ -10,17 +10,17 @@ import { Answer } from "./answersBlock";
 
 
 export type Data = [{
-     category: string, 
+    category: string, 
     correctAnswer: string,
-     difficulty: string,
-      id: string,
-       incorrectAnswers: string [],
-       isNiche: boolean,
-       question: string,
-       regions: [],
-       tags: string [],
-       type: string
-    }] ;
+    difficulty: string,
+    id: string,
+    incorrectAnswers: string [],
+    isNiche: boolean,
+    question: string,
+    regions: [],
+    tags: string [],
+    type: string
+}];
 
 
 // -----------------------------------------------Общие переменные-----------------------------------------------
@@ -34,7 +34,7 @@ let countAndLifesBlock = CountAndLifesBlock();
 let lifesBlock = LifesBlock();
 
 // -----------------------------------------------Рендеры компонентов-----------------------------------------------
-const questionBlockRender = (dataBase:any) => {
+const questionBlockRender = (dataBase:Data) => {
     gamePage.innerHTML = '';
     gamePage.appendChild(QuestionBlock(dataBase, questionIndex));
 }
@@ -57,13 +57,13 @@ export const answersRender= (dataBase: any) => {
     let answersArray:Array<string> = [];
     let correctAnswer:string;
     answersArray.push(dataBase[answerIndex].correctAnswer, dataBase[answerIndex].incorrectAnswers[0], dataBase[answerIndex].incorrectAnswers[1], dataBase[answerIndex].incorrectAnswers[2]);
-    // shuffle(answersArray); 
+    shuffle(answersArray); 
     correctAnswer = dataBase[answerIndex].correctAnswer;
     let answersBlock = document.createElement('div');
     answersBlock.classList.add('answers-block');
 
     for (let i = 0; i < answersArray.length; i++) {
-        let answer = Answer(dataBase , lifes, changeQuestionIndex, changeAnswersIndex, losingLife, stopGame, correctAnswer);
+        let answer = Answer(dataBase , lifes, changeQuestionIndex, changeAnswersIndex, losingLife, correctAnswer);
         
         answer.innerHTML = answersArray[i];
         
@@ -84,12 +84,18 @@ function changeQuestionIndex() {
 
 function losingLife() {
     lifes -= 1;
+    if (lifes === 0) {
+        stopGame();
+    }
     return lifes;
 }
 
 function stopGame() {
-    gamePage.style.display='none';
-    alert('You have lost!');
+  
+        setTimeout(() => {
+            alert('You have lost');
+            gamePage.style.display='none';
+        }, 100)
 }
 
 function shuffle(array:any) {

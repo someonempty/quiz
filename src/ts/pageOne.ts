@@ -10,7 +10,7 @@ const topics:HTMLElement = document.querySelector('.topics')!;
 
 export let selectedTopics:any = [];
 export let selectedDifficultyButton:string;
-export let selectedCountButton:string;
+export let selectedCountButton:number;
 
 const topicsArray = [
     {title: 'General', data: 'General'}, 
