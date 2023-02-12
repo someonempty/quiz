@@ -7,8 +7,6 @@ import { LifesBlock } from "./lifesBlock";
 import { CountAndLifesBlock } from "./countAndLifesBlock";
 import { Answer } from "./answersBlock";
 
-
-
 export type Data = [{
     category: string, 
     correctAnswer: string,
@@ -21,7 +19,6 @@ export type Data = [{
     tags: string [],
     type: string
 }];
-
 
 // -----------------------------------------------Общие переменные-----------------------------------------------
 export let questionIndex: number = 1;
@@ -63,7 +60,7 @@ export const answersRender= (dataBase: any) => {
     answersBlock.classList.add('answers-block');
 
     for (let i = 0; i < answersArray.length; i++) {
-        let answer = Answer(dataBase , lifes, changeQuestionIndex, changeAnswersIndex, losingLife, correctAnswer);
+        let answer = Answer(dataBase , changeQuestionIndex, changeAnswersIndex, losingLife, correctAnswer);
         
         answer.innerHTML = answersArray[i];
         

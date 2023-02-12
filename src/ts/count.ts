@@ -8,7 +8,9 @@ export const CountBlock = (questionIndex:number, selectedCountButton:number) => 
     countBlock.innerText = questionIndex.toString() + '/' + selectedCountButton;
     
     if (questionIndex == selectedCountButton) {
-        alert('You won, congratulations!');
+        setTimeout(() => {
+            alert('You won, congratulations!');
+        }, 100)
     }
     return countBlock;
 }
