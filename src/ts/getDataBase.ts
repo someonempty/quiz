@@ -11,3 +11,5 @@ export const getDataBase = async () => {
     dataBase = await fetching(selectedTopics, selectedCountButton, selectedDifficultyButton);
     return dataBase;
 }
+
+
