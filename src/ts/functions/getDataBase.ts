@@ -1,8 +1,8 @@
 import { fetching } from "./fetching";
-import { selectedTopics } from "./pageOne";
-import { selectedDifficultyButton } from "./pageOne";
-import { selectedCountButton } from "./pageOne";
-import { Data } from "./pageTwo";
+import { selectedTopics } from "../pages/pageOne";
+import { selectedDifficultyButton } from "../pages/pageOne";
+import { selectedCountButton } from "../pages/pageOne";
+import { Data } from "../pages/pageTwo";
 
 export let dataBase:Data;
 

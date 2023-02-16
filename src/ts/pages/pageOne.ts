@@ -1,7 +1,7 @@
 import '../style.scss'
-import { Topic } from './topic';
-import { SettingsBlock } from "./settings";
-import { StartButton } from "./start";
+import { Topic } from '../components/topic';
+import { SettingsBlock } from "../components/settings";
+import { StartButton } from "../components/start";
 import { createSecondPage } from './pageTwo';
 
 const gamePage: HTMLElement = document.querySelector('.game-page')!;

@@ -1,11 +1,11 @@
 // -----------------------------------------------Импортирую компоненты-----------------------------------------------
-import { QuestionBlock } from "./question";
-import { CountBlock } from "./count";
-import { Life } from "./lifes";
+import { QuestionBlock } from "../components/question";
+import { CountBlock } from "../components/countBlock";
+import { Life } from "../components/life";
 import { selectedCountButton } from "./pageOne";
-import { LifesBlock } from "./lifesBlock";
-import { CountAndLifesBlock } from "./countAndLifesBlock";
-import { Answer } from "./answersBlock";
+import { LifesBlock } from "../components/lifesBlock";
+import { CountAndLifesBlock } from "../components/countAndLifesBlock";
+import { Answer } from "../components/Answer";
 
 export type Data = [{
     category: string, 

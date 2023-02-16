@@ -1,5 +1,5 @@
-import { createSecondPage } from "./pageTwo";
-import { Data } from "./pageTwo";
+import { createSecondPage } from "../pages/pageTwo";
+import { Data } from "../pages/pageTwo";
 
 export const Answer = (dataBase: Data, onChangeQuestionIndex:Function, onChangeAnswersIndex:Function, onLosingLife:Function, correctAnswer:string) => {
 

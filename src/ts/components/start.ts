@@ -1,5 +1,5 @@
-import { getDataBase } from "./getDataBase";
-import { dataBase } from "./getDataBase";
+import { getDataBase } from "../functions/getDataBase";
+import { dataBase } from "../functions/getDataBase";
 
 export const StartButton = (onCreateSecondPage:Function, onHideFirstPage:Function) => {
     const startButton = document.createElement('button');
