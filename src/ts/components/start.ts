@@ -1,5 +1,8 @@
-import { getDataBase } from "../functions/getDataBase";
-import { dataBase } from "../functions/getDataBase";
+import { fetching } from "../functions/fetching";
+import { dataBase } from "../functions/fetching";
+import { selectedTopics } from "../pages/pageOne";
+import { selectedDifficultyButton } from "../pages/pageOne";
+import { selectedCountButton } from "../pages/pageOne";
 
 export const StartButton = (onCreateSecondPage:Function, onHideFirstPage:Function) => {
     const startButton = document.createElement('button');
@@ -8,7 +11,7 @@ export const StartButton = (onCreateSecondPage:Function, onHideFirstPage:Functio
 
     startButton.onclick = async () => {
         onHideFirstPage();
-        await getDataBase();
+        await fetching(selectedCountButton, selectedDifficultyButton, selectedTopics);
         await console.log(dataBase);
         onCreateSecondPage(dataBase);
     }

@@ -1,4 +1,3 @@
-// import '../scss/style.scss'
 import { Topic } from '../components/topic';
 import { SettingsBlock } from "../components/settings";
 import { StartButton } from "../components/start";

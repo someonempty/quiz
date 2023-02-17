@@ -1,6 +1,11 @@
 
-export const fetching = async (categories: string[], limit: number, difficulty: string) => {
-    const res = await fetch(`https://the-trivia-api.com/api/questions?limit=${limit}&difficulty=${difficulty}&categories=${categories}`)
+
+import { Data } from "../pages/pageTwo";
+
+export let dataBase:Data;
+
+export const fetching = async (selectedCountButton: number, selectedDifficultyButton: string, selectedTopics: string[]) => {
+    dataBase = await fetch(`https://the-trivia-api.com/api/questions?limit=${selectedCountButton}&difficulty=${selectedDifficultyButton}&categories=${selectedTopics}`)
         .then(res => res.json())
-    return res
+    return dataBase
 }
