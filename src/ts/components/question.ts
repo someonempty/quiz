@@ -1,4 +1,4 @@
-import { Data } from "./pageTwo";
+import { Data } from "../pages/pageTwo";
 
 export const QuestionBlock = (questions:Data, questionIndex:number) => {
 
