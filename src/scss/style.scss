@@ -1,4 +1,4 @@
-* {
+*, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -125,19 +125,19 @@ main {
   cursor: pointer;
 }
 
-.fifteen, .thirty, .fifty {
+.fifteenQuestion, .thirtyQuestion, .fiftyQuestion {
   display: none;
 }
 
-.fifteen:checked + .count-button {
+.fifteenQuestion:checked + .count-button {
   border: 2px solid #DB6767;
 }
 
-.thirty:checked + .count-button {
+.thirtyQuestion:checked + .count-button {
   border: 2px solid #DB6767;
 }
 
-.fifty:checked + .count-button {
+.fiftyQuestion:checked + .count-button {
   border: 2px solid #DB6767;
 }
 
@@ -268,12 +268,12 @@ main {
 
 .answer {
   cursor: pointer;
-  border: none;
+  border: 10px solid transparent;
   background-color: #705757;
   border-radius: 25px;
   min-height: 150px;
   width: 300px;
-  font-size: 43px;
+  font-size: 35px;
   line-height: 50px;
   text-align: center;
   color: #FFFFFF;

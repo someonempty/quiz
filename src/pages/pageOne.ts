@@ -7,46 +7,45 @@ const gamePage: HTMLElement = document.querySelector('.game-page')!;
 const main: HTMLElement = document.querySelector('main')!;
 const topics:HTMLElement = document.querySelector('.topics')!;
 
-export let selectedTopics:any = [];
+export let selectedTopics:string[] = [];
 export let selectedDifficultyButton:string;
 export let selectedCountButton:number;
 
 const topicsArray = [
-    {title: 'General', data: 'General'}, 
-    {title: 'Geography', data: 'Geography'}, 
-    {title: 'Sport', data: 'Sport'},
-    {title: 'History', data: 'History'}, 
-    {title: 'Arts', data: 'Arts'},
-    {title: 'Films', data: 'Film'}, 
-    {title: 'Science', data: 'Science'}, 
-    {title: 'Food', data: 'Food'}
+  {title: 'General'}, 
+  {title: 'Geography'}, 
+  {title: 'Sport'},
+  {title: 'History'}, 
+  {title: 'Arts'},
+  {title: 'Film'}, 
+  {title: 'Science'},
+  {title: 'Food'}
 ];
 
 const topicRender = () => {
   topicsArray.forEach(topic => {
-      topics.appendChild(Topic(topic.title, topic.data, selectedTopics))
+      topics.appendChild(Topic(topic.title, selectedTopics))
   })
 }
 
 function checkDifficulty() {
-  const radios:any = document.querySelectorAll('input[name="difficulty"]');
-  for (const r of radios) {
-      if (r.checked) {
-        selectedDifficultyButton = r.value;
-        console.log(selectedDifficultyButton)
-      }
+  const radios:NodeListOf<HTMLInputElement> = document.querySelectorAll('input[name="difficulty"]');
+  radios.forEach((radio) => {
+    if (radio.checked) {
+      selectedDifficultyButton = radio.value;
     }
+  })
 }
 
 function checkCount() {
-  const counts:any = document.querySelectorAll('input[name="count"]');
-  for (const c of counts) {
-      if (c.checked) {
-        selectedCountButton = c.value;
-        console.log(selectedCountButton);
-      }
+  const counts:NodeListOf<HTMLInputElement> = document.querySelectorAll('input[name="count"]');
+  counts.forEach((count) => {
+    if (count.checked) {
+      selectedCountButton = +count.value;
     }
+  })
 }
+
 
 function hideFirstPage ()  {
 main.style.display = 'none';

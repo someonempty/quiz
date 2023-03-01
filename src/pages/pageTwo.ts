@@ -1,13 +1,11 @@
 // -----------------------------------------------Импортирую компоненты-----------------------------------------------
-import { QuestionBlock } from "../components/question";
-import { CountBlock } from "../components/countBlock";
-import { Life } from "../components/life";
+import { QuestionBlock } from "../components/QuestionBlock";
+import { CountBlock } from "../components/CountBlock";
+import { Life } from "../components/Life";
 import { selectedCountButton } from "./pageOne";
-import { LifesBlock } from "../components/lifesBlock";
-import { CountAndLifesBlock } from "../components/countAndLifesBlock";
 import { Answer } from "../components/Answer";
 
-export type Data = [{
+export type Data = {
     category: string, 
     correctAnswer: string,
     difficulty: string,
@@ -18,7 +16,7 @@ export type Data = [{
     regions: [],
     tags: string [],
     type: string
-}];
+}[];
 
 // -----------------------------------------------Общие переменные-----------------------------------------------
 export let questionIndex: number = 1;
@@ -27,8 +25,11 @@ export let lifes: number = 3;
 
 // -----------------------------------------------Получаю дом элемент(ы)-----------------------------------------------
 const gamePage: HTMLElement = document.querySelector('.game-page')!;
-let countAndLifesBlock = CountAndLifesBlock();
-let lifesBlock = LifesBlock();
+const countAndLifesBlock = document.createElement('div');
+countAndLifesBlock.classList.add('count-and-lifes-block');
+const lifesBlock = document.createElement('div');
+lifesBlock.classList.add('lifes-block');
+
 
 // -----------------------------------------------Рендеры компонентов-----------------------------------------------
 const questionBlockRender = (dataBase:Data) => {
@@ -60,7 +61,7 @@ export const answersRender= (dataBase: Data) => {
     answersBlock.classList.add('answers-block');
 
     for (let i = 0; i < answersArray.length; i++) {
-        let answer = Answer(dataBase , changeQuestionIndex, changeAnswersIndex, losingLife, correctAnswer);
+        let answer = Answer(dataBase , changeQuestionIndex, changeAnswersIndex, losingLife, correctAnswer, createSecondPage);
         
         answer.innerHTML = answersArray[i];
         
@@ -88,10 +89,10 @@ function losingLife() {
 }
 
 function stopGame() {
-  
         setTimeout(() => {
             alert('You have lost!');
             gamePage.style.display='none';
+            location.reload();
         }, 100)
 }
 
