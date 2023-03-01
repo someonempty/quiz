@@ -1,5 +1,5 @@
-import { fetching } from "../functions/fetching";
-import { dataBase } from "../functions/fetching";
+import { fetching } from "../utils/fetching";
+import { dataBase } from "../utils/fetching";
 import { selectedTopics } from "../pages/pageOne";
 import { selectedDifficultyButton } from "../pages/pageOne";
 import { selectedCountButton } from "../pages/pageOne";
@@ -10,10 +10,14 @@ export const StartButton = (onCreateSecondPage:Function, onHideFirstPage:Functio
     startButton.innerText = 'Start';
 
     startButton.onclick = async () => {
-        onHideFirstPage();
-        await fetching(selectedCountButton, selectedDifficultyButton, selectedTopics);
-        await console.log(dataBase);
-        onCreateSecondPage(dataBase);
+        if (!selectedTopics || !selectedDifficultyButton || !selectedCountButton) {
+            startButton.disabled;
+        } else {
+                onHideFirstPage();
+                await fetching(selectedCountButton, selectedDifficultyButton, selectedTopics);
+                await console.log(dataBase);
+                onCreateSecondPage(dataBase);
+        }
     }
 
     return startButton;

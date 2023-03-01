@@ -1,19 +1,17 @@
 
-export const Topic = (title:string, data:string, selectedTopics: any) => {
+export const Topic = (title:string, selectedTopics: string[]) => {
 
     const topic = document.createElement('div');
     const topicTitle = document.createElement('span');
 
+    topicTitle.innerText = title;
+
     topic.appendChild(topicTitle);
-
-    topicTitle.innerHTML = title;
-
-    topic.setAttribute("data-value", data);
 
     topic.addEventListener('click', () => {
         topic.classList.toggle('topic-active');
         if (topic.classList.contains('topic-active')) {
-            selectedTopics.push(topic.dataset.value);
+            selectedTopics.push(title);
             console.log(selectedTopics);
         } else {
             selectedTopics.pop();

@@ -1,5 +1,4 @@
 
-
 import { Data } from "../pages/pageTwo";
 
 export let dataBase:Data;
